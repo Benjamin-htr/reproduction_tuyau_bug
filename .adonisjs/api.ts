@@ -1,0 +1,165 @@
+import type { MakeTuyauRequest, MakeTuyauResponse } from '@tuyau/utils/types'
+import type { InferInput } from '@vinejs/vine/types'
+
+export interface ApiDefinition {
+}
+const routes = [
+  {
+    params: ["*"],
+    name: 'drive.fs.serve',
+    path: '/uploads/*',
+    method: ["GET","HEAD"],
+    types: {} as unknown,
+  },
+  {
+    params: [],
+    name: 'admin.dashboard',
+    path: '/admin',
+    method: ["GET","HEAD"],
+    types: {} as unknown,
+  },
+  {
+    params: [],
+    name: 'admin.users.index',
+    path: '/admin/users',
+    method: ["GET","HEAD"],
+    types: {} as unknown,
+  },
+  {
+    params: [],
+    name: 'admin.users.create',
+    path: '/admin/users/create',
+    method: ["GET","HEAD"],
+    types: {} as unknown,
+  },
+  {
+    params: [],
+    name: 'admin.users.store',
+    path: '/admin/users',
+    method: ["POST"],
+    types: {} as unknown,
+  },
+  {
+    params: ["id"],
+    name: 'admin.users.edit',
+    path: '/admin/users/:id/edit',
+    method: ["GET","HEAD"],
+    types: {} as unknown,
+  },
+  {
+    params: ["id"],
+    name: 'admin.users.update',
+    path: '/admin/users/:id',
+    method: ["PUT","PATCH"],
+    types: {} as unknown,
+  },
+  {
+    params: ["id"],
+    name: 'admin.users.destroy',
+    path: '/admin/users/:id',
+    method: ["DELETE"],
+    types: {} as unknown,
+  },
+  {
+    params: ["id"],
+    name: 'admin.users.toggle.disabled',
+    path: '/admin/users/:id/toggle-disabled',
+    method: ["PATCH"],
+    types: {} as unknown,
+  },
+  {
+    params: ["id"],
+    name: 'admin.users.forgot.password',
+    path: '/admin/users/:id/forgot-password',
+    method: ["POST"],
+    types: {} as unknown,
+  },
+  {
+    params: [],
+    name: 'admin.audits.index',
+    path: '/admin/audits',
+    method: ["GET","HEAD"],
+    types: {} as unknown,
+  },
+  {
+    params: ["id"],
+    name: 'admin.audits.show',
+    path: '/admin/audits/:id',
+    method: ["GET","HEAD"],
+    types: {} as unknown,
+  },
+  {
+    params: [],
+    name: 'home',
+    path: '/',
+    method: ["GET","HEAD"],
+    types: {} as unknown,
+  },
+  {
+    params: [],
+    name: 'auth.session.create',
+    path: '/auth/login',
+    method: ["GET","HEAD"],
+    types: {} as unknown,
+  },
+  {
+    params: [],
+    name: 'auth.session.store',
+    path: '/auth/login',
+    method: ["POST"],
+    types: {} as unknown,
+  },
+  {
+    params: [],
+    name: 'auth.password.create',
+    path: '/auth/forgot-password',
+    method: ["GET","HEAD"],
+    types: {} as unknown,
+  },
+  {
+    params: [],
+    name: 'auth.password.store',
+    path: '/auth/forgot-password',
+    method: ["POST"],
+    types: {} as unknown,
+  },
+  {
+    params: ["email"],
+    name: 'auth.password.reset.create',
+    path: '/auth/reset-password/:email',
+    method: ["GET","HEAD"],
+    types: {} as unknown,
+  },
+  {
+    params: [],
+    name: 'auth.password.reset.store',
+    path: '/auth/reset-password',
+    method: ["POST"],
+    types: {} as unknown,
+  },
+  {
+    params: [],
+    name: 'auth.session.destroy',
+    path: '/auth/logout',
+    method: ["POST"],
+    types: {} as unknown,
+  },
+  {
+    params: ["id"],
+    name: 'impersonate.store',
+    path: '/impersonates/:id',
+    method: ["POST"],
+    types: {} as unknown,
+  },
+  {
+    params: [],
+    name: 'impersonate.destroy',
+    path: '/impersonates',
+    method: ["POST"],
+    types: {} as unknown,
+  },
+] as const;
+export const api = {
+  routes,
+  definition: {} as ApiDefinition
+}
